@@ -37,7 +37,6 @@ CREATE TABLE IF NOT EXISTS Main (
 );
 ''')
 
-# Son Firainsoslko
 query = input('\nIn which location do you want to know the weather? ')
 url = f'https://www.google.com/search?q=weather+{query}'
 
@@ -46,7 +45,6 @@ driver.get(url)
 soup = BeautifulSoup(driver.page_source, "html.parser")
 
 # print(soup.prettify(), '\n--------------------------------------------------------')
-
 def findAllValues(soupDef):
     global temp, loc, time, TWeather, falls, wet, wind
     # Finding all results
@@ -134,8 +132,7 @@ try:
 
         driver.get(correctedUrl)
         soupCor = BeautifulSoup(driver.page_source, "html.parser")
-        # print(soupCor.prettify())
-
+        
         # --- Finding GOOGLE MAP LINK of Location ---
         locMap = f'https://maps.google.com/maps?q={correctedQuery}'
 
